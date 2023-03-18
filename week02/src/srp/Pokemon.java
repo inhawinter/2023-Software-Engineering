@@ -35,13 +35,12 @@ public class Pokemon {
         this.hp = hp;
     }
 
-    public void attack(String opponent){
-        System.out.println(opponent + "를(을) 기본 공격합니다!");
-    }
-    public void evolve(){
-        level++;
-        System.out.println("레벨 up!");
-    }
-
-    // 기능을 추가적으로 넣을 수 있다
+    // violates SRP
+//    public void attack(String opponent){
+//        System.out.println(opponent + "를(을) 기본 공격합니다!");
+//    }
+//    public void evolve(){
+//        level++;
+//        System.out.println("레벨 up!");
+//    }
 }
