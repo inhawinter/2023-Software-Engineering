@@ -11,9 +11,9 @@ classDiagram
     Weapon <|.. Thunderbolt
     Weapon <|.. Flamethrower
     Weapon <|.. BubbleBeam
-    Pokemon ..> Thunderbolt
-    Pokemon ..> Flamethrower
-    Pokemon ..> BubbleBeam
+    Pokemon <.. Thunderbolt
+    Pokemon <.. Flamethrower
+    Pokemon <.. BubbleBeam
   class Pokemon {
       <<abstract>>
     - name: String
