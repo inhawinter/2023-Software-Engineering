@@ -3,8 +3,8 @@ classDiagram
     Pokemon <|-- Pikachu
     Pokemon <|-- Squirtle
     Pokemon <|-- Charizard
-    Pokemon *-- Weapon
-    Pokemon *-- Fly
+    Pokemon o-- Weapon
+    Pokemon o-- Fly
     Fly <|.. NoFly
     Fly <|.. Wings
     Fly <|.. JetPack
