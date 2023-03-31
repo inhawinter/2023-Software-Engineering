@@ -1,1 +1,1 @@
-# software-engineering-2023. Inha University.
+# This repository contains practical exercises, assignments, and lecture notes related to the software engineering course at Inha University.
