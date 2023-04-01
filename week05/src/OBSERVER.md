@@ -4,7 +4,9 @@ classDiagram
     LandCh ..|> Subject : Realization
     KoreanSubscriber ..|> Subscriber : Realization
     KoreanSubscriber o-- LandCh : Aggregation
-
+    EnglishSubscriber ..|> Subscriber : Realization
+    EnglishSubscriber o-- LandCh : Aggregation
+    
     class Subject {
         <<interface>>
         + registerSubscriber(s: Subscriber): void
@@ -28,6 +30,13 @@ classDiagram
     }
     
     class KoreanSubscriber {
+        - name: String
+        - value: int
+        - landCh: LandCh
+        + update(value: int): void
+    }
+    
+    class EnglishSubscriber {
         - name: String
         - value: int
         - landCh: LandCh
