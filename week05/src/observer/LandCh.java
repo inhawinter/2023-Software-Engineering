@@ -23,13 +23,15 @@ public class LandCh implements Subject{
 
     @Override
     public void notifySubscriber() {
-        for(Subscriber subscriber : subscribers)
-            subscriber.update(price);
-        //subscribers.forEach(s -> s.update(price));
+        subscribers.forEach(s -> s.update()); // pull
     }
 
     public void setPrice(int price) {
         this.price = price;
         notifySubscriber();
+    }
+
+    public int getPrice() {  // pull
+        return price;
     }
 }
