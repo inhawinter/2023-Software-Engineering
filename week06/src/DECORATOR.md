@@ -41,7 +41,7 @@ classDiagram
         +getName()
     }
 
-    Pokemon <|-- BasicPokemon
+    Pokemon <|.. BasicPokemon
     Pokemon <|-- PokemonDecorator
     PokemonDecorator <|.. FireDecorator
     PokemonDecorator <|.. ElectricDecorator
