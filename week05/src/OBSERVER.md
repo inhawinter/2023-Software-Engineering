@@ -3,9 +3,9 @@ classDiagram
     Subject --> "*" Subscriber : Association
     LandCh ..|> Subject : Realization
     KoreanSubscriber ..|> Subscriber : Realization
-    KoreanSubscriber o-- LandCh : Aggregation
+    KoreanSubscriber o-- Subject : Aggregation
     EnglishSubscriber ..|> Subscriber : Realization
-    EnglishSubscriber o-- LandCh : Aggregation
+    EnglishSubscriber o-- Subject : Aggregation
     
     class Subject {
         <<interface>>
@@ -16,7 +16,7 @@ classDiagram
 
     class Subscriber {
         <<interface>>
-        + update(value: int): void
+        + update(): void
     }
     note for Subscriber "Observer Interface"
     
@@ -27,19 +27,20 @@ classDiagram
         + removeSubscriber(s: Subscriber): void
         + notifySubscriber(): void
         + setPrice(price: int): void
+        + getPrice(): int
     }
     
     class KoreanSubscriber {
         - name: String
         - value: int
-        - landCh: LandCh
-        + update(value: int): void
+        - Subject: LandCh
+        + update(): void
     }
     
     class EnglishSubscriber {
         - name: String
         - value: int
-        - landCh: LandCh
-        + update(value: int): void
+        - Subject: LandCh
+        + update(): void
     }
 ```
