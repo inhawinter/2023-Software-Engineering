@@ -1,10 +1,14 @@
 package dip;
 
-class Trainer {
-    private final Pokemon pokemon;
+interface Battleable {
+    void attack();
+}
 
-    public Trainer() {
-        pokemon = new Pokemon();
+class Trainer {
+    private final Battleable battleable;
+
+    public Trainer(Battleable battleable) {
+        this.battleable = battleable;
     }
 
     public void catchPokemon() {
@@ -12,11 +16,11 @@ class Trainer {
     }
 
     public void battle() {
-        pokemon.attack();
+        battleable.attack();
     }
 }
 
-class Pokemon {
+class Pokemon implements Battleable {
     public void attack() {
         System.out.println("공격!");
     }
@@ -24,7 +28,8 @@ class Pokemon {
 
 public class PokemonGame {
     public static void main(String[] args) {
-        Trainer jiwoo = new Trainer();
+        Pokemon pikachu = new Pokemon();
+        Trainer jiwoo = new Trainer(pikachu);
         jiwoo.catchPokemon();
         jiwoo.battle();
     }
