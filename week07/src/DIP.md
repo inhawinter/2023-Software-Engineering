@@ -1,11 +1,15 @@
 ```mermaid
 classDiagram
-    Trainer *-- Pokemon : Composition
+    Trainer --> Battleable : Association
+    Pokemon ..|> Battleable : Realization
+    class Battleable {
+        <<interface>>
+        + attack()
+    }
     
-    note for Trainer "Constructor create Pokemon instance"
     class Trainer {
-        - pokemon: Pokemon
-        + Trainer()
+        - battleable: Battleable
+        + Trainer(battleable: Battleable)
         + catchPokemon()
         + battle()
     }
