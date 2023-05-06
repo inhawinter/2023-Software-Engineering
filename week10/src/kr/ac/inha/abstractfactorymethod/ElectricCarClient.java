@@ -1,7 +1,7 @@
 package kr.ac.inha.abstractfactorymethod;
 
 interface CarFactory {
-    public ElectricMotor createMotor();
+    ElectricMotor createMotor();
     public Battery createBattery();
 }
 
@@ -27,7 +27,7 @@ class HyundaiFactory implements CarFactory {
 
 
 interface ElectricMotor {
-    public void start();
+    void start();
 }
 
 class TeslaMotor implements ElectricMotor {
@@ -43,7 +43,7 @@ class HyundaiMotor implements ElectricMotor {
 }
 
 interface Battery {
-    public int getRange();
+    int getRange();
 }
 
 class TeslaBattery implements Battery {
