@@ -12,7 +12,7 @@ class PokemonCenter {
 //        pokemonList.add(new Pokemon("Charmander"));
     }
 
-    public static PokemonCenter getCenter() {  // before synchronized
+    public synchronized static PokemonCenter getCenter() {  // after synchronized
         if (center == null) {
             center = new PokemonCenter();
         }
