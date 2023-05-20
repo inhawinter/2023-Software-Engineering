@@ -3,18 +3,20 @@ package kr.ac.inha.singleton;
 import java.util.ArrayList;
 
 class PokemonCenter {
-    private static PokemonCenter center = null;
+    private static volatile PokemonCenter center = null;  // dcl
     private ArrayList<Pokemon> pokemonList = new ArrayList<Pokemon>();
 
     private PokemonCenter() {
         pokemonList.add(new Pokemon("Pikachu"));
         pokemonList.add(new Pokemon("Squirtle"));
-//        pokemonList.add(new Pokemon("Charmander"));
+        pokemonList.add(new Pokemon("Charmander"));
     }
 
-    public synchronized static PokemonCenter getCenter() {  // after synchronized
+    public static PokemonCenter getCenter() {  // dcl
         if (center == null) {
-            center = new PokemonCenter();
+            synchronized (Pokemon.class){
+                if (center == null) center = new PokemonCenter();
+            }
         }
         return center;
     }
