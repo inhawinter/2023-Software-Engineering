@@ -4,7 +4,7 @@ package kr.ac.inha.command;
 public class PokemonGame {
     public static void main(String[] args) {
         // 리시버 객체 생성
-        Pokemon pikachu = new Pokemon("개굴닌자");
+        Pokemon pikachu = new Pokemon("피카츄");
 
         // 커맨드 객체 생성
         Command attackCommand = new AttackCommand(pikachu);
@@ -14,7 +14,7 @@ public class PokemonGame {
         Game game = new Game();
 
         // 커맨드 설정 및 실행
-        game.setCommand(attackCommand);
+        game.setCommand(attackCommand); // 커맨드 객체 등록
         game.play();
 
         //game.setCommand(defendCommand);
