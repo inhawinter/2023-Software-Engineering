@@ -1,4 +1,4 @@
-package kr.ac.inha.adaptor;
+package kr.ac.inha.adapter;
 
 public class PokemonGame {
 }
