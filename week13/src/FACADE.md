@@ -3,9 +3,9 @@ classDiagram
     PokemonGame --> Trainer
     note for Trainer "Facade Class"    
     
-    Trainer *-- Pokemon : Composition
-    Trainer *-- Item : Composition
-    Trainer *-- Bag : Composition
+    Trainer o-- Pokemon : Aggregation
+    Trainer o-- Item : Aggregation
+    Trainer o-- Bag : Aggregation
     note for Pokemon "Subsystem"
     note for Item "Subsystem"
     note for Bag "Subsystem"
