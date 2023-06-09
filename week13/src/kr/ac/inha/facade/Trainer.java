@@ -5,10 +5,10 @@ public class Trainer {
     private Item item;
     private Bag bag;
 
-    public Trainer() {
-        this.pokemon = new Pokemon();
-        this.item = new Item();
-        this.bag = new Bag();
+    public Trainer(Pokemon pokemon, Item item, Bag bag) {
+        this.pokemon = pokemon;
+        this.item = item;
+        this.bag = bag;
     }
 
     public void startBattle() {
